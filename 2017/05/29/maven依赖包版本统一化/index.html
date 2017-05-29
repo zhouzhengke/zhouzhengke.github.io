@@ -90,16 +90,16 @@
 
 
 
-<meta name="description" content="idea 2017激活方式1.到网站 http://idea.lanyus.com/ 获取注册码。 2.填入下面的license server: http://intellij.mandroid.cn/  http://idea.imsxm.com/  http://idea.iteblog.com/key.php">
+<meta name="description" content="maven依赖包的版本统一化解决方案为了解决子项目中引用包的版本冲突问题，可以用以下方案解决：  新建pom文件放所有子项目中用到的公共依赖  //新建pom文件用来管理版本 &amp;lt;groupId&amp;gt;com.zzk.dependency&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;zzk-common-bom&amp;lt;/artifactId&amp;gt; &amp;lt;versio">
 <meta property="og:type" content="article">
-<meta property="og:title" content="idea 2017 激活方式">
-<meta property="og:url" content="http://yoursite.com/2017/05/29/idea2017激活方式/index.html">
+<meta property="og:title" content="maven 依赖包版本统一化解决方案">
+<meta property="og:url" content="http://yoursite.com/2017/05/29/maven依赖包版本统一化/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="idea 2017激活方式1.到网站 http://idea.lanyus.com/ 获取注册码。 2.填入下面的license server: http://intellij.mandroid.cn/  http://idea.imsxm.com/  http://idea.iteblog.com/key.php">
-<meta property="og:updated_time" content="2017-05-29T08:11:26.110Z">
+<meta property="og:description" content="maven依赖包的版本统一化解决方案为了解决子项目中引用包的版本冲突问题，可以用以下方案解决：  新建pom文件放所有子项目中用到的公共依赖  //新建pom文件用来管理版本 &amp;lt;groupId&amp;gt;com.zzk.dependency&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;zzk-common-bom&amp;lt;/artifactId&amp;gt; &amp;lt;versio">
+<meta property="og:updated_time" content="2017-05-29T08:15:49.336Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="idea 2017 激活方式">
-<meta name="twitter:description" content="idea 2017激活方式1.到网站 http://idea.lanyus.com/ 获取注册码。 2.填入下面的license server: http://intellij.mandroid.cn/  http://idea.imsxm.com/  http://idea.iteblog.com/key.php">
+<meta name="twitter:title" content="maven 依赖包版本统一化解决方案">
+<meta name="twitter:description" content="maven依赖包的版本统一化解决方案为了解决子项目中引用包的版本冲突问题，可以用以下方案解决：  新建pom文件放所有子项目中用到的公共依赖  //新建pom文件用来管理版本 &amp;lt;groupId&amp;gt;com.zzk.dependency&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;zzk-common-bom&amp;lt;/artifactId&amp;gt; &amp;lt;versio">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/29/idea2017激活方式/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/29/maven依赖包版本统一化/"/>
 
 
 
 
 
-  <title>idea 2017 激活方式 | 博客</title>
+  <title>maven 依赖包版本统一化解决方案 | 博客</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -253,7 +253,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/29/idea2017激活方式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/29/maven依赖包版本统一化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZHOU ZK">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">idea 2017 激活方式</h1>
+          <h1 class="post-title" itemprop="name headline">maven 依赖包版本统一化解决方案</h1>
         
 
         <div class="post-meta">
@@ -317,13 +317,53 @@
       
 
       
-        <h1 id="idea-2017激活方式"><a href="#idea-2017激活方式" class="headerlink" title="idea 2017激活方式"></a>idea 2017激活方式</h1><p>1.到网站 <a href="http://idea.lanyus.com/" target="_blank" rel="external">http://idea.lanyus.com/</a> 获取注册码。</p>
-<p>2.填入下面的license server:</p>
-<pre><code>http://intellij.mandroid.cn/
+        <h1 id="maven依赖包的版本统一化解决方案"><a href="#maven依赖包的版本统一化解决方案" class="headerlink" title="maven依赖包的版本统一化解决方案"></a>maven依赖包的版本统一化解决方案</h1><p>为了解决子项目中引用包的版本冲突问题，可以用以下方案解决：</p>
+<blockquote>
+<p>新建pom文件放所有子项目中用到的公共依赖</p>
+</blockquote>
+<pre><code>//新建pom文件用来管理版本
+&lt;groupId&gt;com.zzk.dependency&lt;/groupId&gt;
+&lt;artifactId&gt;zzk-common-bom&lt;/artifactId&gt;
+&lt;version&gt;${zzk-common-bom.version}&lt;/version&gt;
+&lt;packaging&gt;pom&lt;/packaging&gt;
+&lt;!--properties节点中放版本号--&gt;
+&lt;properties&gt;
+&lt;zzk-common-bom.version&gt;123-SNAPSHOT&lt;/zzk-common-bom.version&gt;
+&lt;abc-common.version&gt;0.0.1-SNAPSHOT&lt;/abc-common.version&gt;
+&lt;/properties&gt;
 
-http://idea.imsxm.com/
-
-http://idea.iteblog.com/key.php
+&lt;dependencyManagement&gt;
+  &lt;dependencies&gt; &lt;!-- 这里放置公共依赖和版本号 --&gt;
+    &lt;dependency&gt;
+     &lt;groupId&gt;abc.common&lt;/groupId&gt;
+      &lt;artifactId&gt;abc-common&lt;/artifactId&gt;
+      &lt;version&gt;${abc-common.version}&lt;/version&gt;
+   &lt;/dependency&gt;
+ &lt;/dependencies&gt;
+&lt;/dependencyManagement&gt;
+</code></pre><blockquote>
+<p>然后MAVEN INSTALL 到本地仓库 有私服的可以MVN DEPLOY到私服</p>
+<p>在项目中的pom文件中引用 </p>
+</blockquote>
+<pre><code>&lt;dependencyManagement&gt;
+ &lt;dependencies&gt;
+ &lt;!--导入上边的pom--&gt;
+ &lt;dependency&gt;
+ &lt;groupId&gt;com.zzk.dependency&lt;/groupId&gt;
+ &lt;artifactId&gt;zzk-common-bom&lt;/artifactId&gt;
+ &lt;version&gt;123-SNAPSHOT&lt;/version&gt;
+ &lt;type&gt;pom&lt;/type&gt;
+ &lt;scope&gt;import&lt;/scope&gt;
+ &lt;/dependency&gt;
+ &lt;/dependencies&gt;
+&lt;/dependencyManagement&gt;
+</code></pre><p>然后 就可以引用了（不用加版本号了，版本统一在上边的pom文件中管理）</p>
+<pre><code>&lt;dependencies&gt;
+&lt;dependency&gt;
+   &lt;groupId&gt;abc.common&lt;/groupId&gt;
+   &lt;artifactId&gt;abc-common&lt;/artifactId&gt;
+&lt;/dependency&gt;
+&lt;/dependencies&gt;
 </code></pre>
       
     </div>
@@ -360,8 +400,8 @@ http://idea.iteblog.com/key.php
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/29/使用easymock做单元测试/" rel="next" title="使用easymock 做单元测试">
-                <i class="fa fa-chevron-left"></i> 使用easymock 做单元测试
+              <a href="/2017/05/29/idea2017激活方式/" rel="next" title="idea 2017 激活方式">
+                <i class="fa fa-chevron-left"></i> idea 2017 激活方式
               </a>
             
           </div>
@@ -370,8 +410,8 @@ http://idea.iteblog.com/key.php
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/29/maven依赖包版本统一化/" rel="prev" title="maven 依赖包版本统一化解决方案">
-                maven 依赖包版本统一化解决方案 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/29/hexo-常用命令/" rel="prev" title="hexo 常用命令">
+                hexo 常用命令 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -483,7 +523,7 @@ http://idea.iteblog.com/key.php
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#idea-2017激活方式"><span class="nav-number">1.</span> <span class="nav-text">idea 2017激活方式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#maven依赖包的版本统一化解决方案"><span class="nav-number">1.</span> <span class="nav-text">maven依赖包的版本统一化解决方案</span></a></li></ol></div>
             
 
           </div>
