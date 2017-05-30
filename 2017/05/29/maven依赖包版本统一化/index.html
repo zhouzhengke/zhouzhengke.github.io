@@ -246,26 +246,22 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -446,8 +442,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/29/使用easymock做单元测试/" rel="next" title="使用easymock 做单元测试">
-                <i class="fa fa-chevron-left"></i> 使用easymock 做单元测试
+              <a href="/2017/05/29/idea2017激活方式/" rel="next" title="idea 2017 激活方式">
+                <i class="fa fa-chevron-left"></i> idea 2017 激活方式
               </a>
             
           </div>
@@ -456,8 +452,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/29/idea2017激活方式/" rel="prev" title="idea 2017 激活方式">
-                idea 2017 激活方式 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/29/hexo-常用命令/" rel="prev" title="hexo 常用命令">
+                hexo 常用命令 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1055,19 +1051,6 @@
   </script>
 
 
-
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=5.1.1"></script>
 
 
 
