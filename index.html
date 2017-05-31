@@ -356,10 +356,15 @@
       
         
           
-            <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>hexo n “博文名称” == hexo new “博文名称” # 新建文章<br>hexo p == hexo publish<br>hexo g == hexo generate #生成静态网页<br>hexo s == hexo server #启动服务预览<br>hexo d == hexo deploy #发布</p>
-<p>hexo clean #清除缓存 </p>
-
-          
+          常用命令hexo n “博文名称” == hexo new “博文名称” # 新建文章hexo p == hexo publishhexo g == hexo generate #生成静态网页hexo s == hexo server #启动服务预览hexo d == hexo deploy #发布
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/29/hexo-常用命令/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -469,55 +474,21 @@
       
         
           
-            <p>为了解决子项目中引用包的版本冲突问题，可以用以下方案解决：</p>
-<blockquote>
-<p>新建pom文件放所有子项目中用到的公共依赖</p>
-</blockquote>
-<pre><code>//新建pom文件用来管理版本
-&lt;groupId&gt;com.zzk.dependency&lt;/groupId&gt;
-&lt;artifactId&gt;zzk-common-bom&lt;/artifactId&gt;
-&lt;version&gt;${zzk-common-bom.version}&lt;/version&gt;
-&lt;packaging&gt;pom&lt;/packaging&gt;
-&lt;!--properties节点中放版本号--&gt;
-&lt;properties&gt;
-&lt;zzk-common-bom.version&gt;123-SNAPSHOT&lt;/zzk-common-bom.version&gt;
-&lt;abc-common.version&gt;0.0.1-SNAPSHOT&lt;/abc-common.version&gt;
-&lt;/properties&gt;
+          为了解决子项目中引用包的版本冲突问题，可以用以下方案解决：
 
-&lt;dependencyManagement&gt;
-  &lt;dependencies&gt; &lt;!-- 这里放置公共依赖和版本号 --&gt;
-    &lt;dependency&gt;
-     &lt;groupId&gt;abc.common&lt;/groupId&gt;
-      &lt;artifactId&gt;abc-common&lt;/artifactId&gt;
-      &lt;version&gt;${abc-common.version}&lt;/version&gt;
-   &lt;/dependency&gt;
- &lt;/dependencies&gt;
-&lt;/dependencyManagement&gt;
-</code></pre><blockquote>
-<p>然后MAVEN INSTALL 到本地仓库 有私服的可以MVN DEPLOY到私服</p>
-<p>在项目中的pom文件中引用 </p>
-</blockquote>
-<pre><code>&lt;dependencyManagement&gt;
- &lt;dependencies&gt;
- &lt;!--导入上边的pom--&gt;
- &lt;dependency&gt;
- &lt;groupId&gt;com.zzk.dependency&lt;/groupId&gt;
- &lt;artifactId&gt;zzk-common-bom&lt;/artifactId&gt;
- &lt;version&gt;123-SNAPSHOT&lt;/version&gt;
- &lt;type&gt;pom&lt;/type&gt;
- &lt;scope&gt;import&lt;/scope&gt;
- &lt;/dependency&gt;
- &lt;/dependencies&gt;
-&lt;/dependencyManagement&gt;
-</code></pre><p>然后 就可以引用了（不用加版本号了，版本统一在上边的pom文件中管理）</p>
-<pre><code>&lt;dependencies&gt;
-&lt;dependency&gt;
-   &lt;groupId&gt;abc.common&lt;/groupId&gt;
-   &lt;artifactId&gt;abc-common&lt;/artifactId&gt;
-&lt;/dependency&gt;
-&lt;/dependencies&gt;
-</code></pre>
-          
+新建pom文件放所有子项目中用到的公共依赖
+
+//新建pom文件用来管理版本
+&lt;groupId&gt;com.zzk.dependency&lt;/groupId&gt;
+&lt;artifactId&gt;zzk-common-b
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/29/maven依赖包版本统一化/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -627,15 +598,22 @@
       
         
           
-            <p>1.到网站 <a href="http://idea.lanyus.com/" target="_blank" rel="external">http://idea.lanyus.com/</a> 获取注册码。</p>
-<p>2.填入下面的license server:</p>
-<pre><code>http://intellij.mandroid.cn/
+          1.到网站 http://idea.lanyus.com/ 获取注册码。
+2.填入下面的license server:
+http://intellij.mandroid.cn/
 
 http://idea.imsxm.com/
 
 http://idea.iteblog.com/key.php
-</code></pre>
+
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/29/idea2017激活方式/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -745,19 +723,20 @@ http://idea.iteblog.com/key.php
       
         
           
-            <p>单元测试中经常会遇到一些比较难以测试的对象，比如调用外部接口 这个时候我们可以使用easymock手动构建一个对象 并设置返回值</p>
-<p>具体做法  假设需要构造的对象为ObjectA</p>
-<pre><code>class ObjectA{
+          单元测试中经常会遇到一些比较难以测试的对象，比如调用外部接口 这个时候我们可以使用easymock手动构建一个对象 并设置返回值
+具体做法  假设需要构造的对象为ObjectA
+class ObjectA{
 public void methodA(String a,String b);
 }
-ObjectA  a = easyMock.createMock(ObjectA,class);
-easyMock.expect(a.methodA((String)EasyMock.anyObject(),(String)EasyMock.anyObject()))
-easyMock.replay(a);
-</code></pre><p>使用spring工具类通过反射在调用之前把需要用到这个对象的地方换成 构造的这个对象 比如在AServiceImpl中要用到ObjectA</p>
-<pre><code>ReflectionTestUtils.setField(aServiceImpl,&quot;objecta&quot;,a,ObjectA.class);
-</code></pre><p>完了就可以调用了</p>
-
-          
+Obje
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/29/使用easymock做单元测试/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -867,18 +846,15 @@ easyMock.replay(a);
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-<h2 id="、、、、、、、、、"><a href="#、、、、、、、、、" class="headerlink" title="、、、、、、、、、"></a>、、、、、、、、、</h2><p>just try an you where see you can do it!!</p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/27/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
